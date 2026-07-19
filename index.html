@@ -337,6 +337,27 @@
   .footer-links a:hover{color:var(--gold-light);}
   .footer-bottom{border-top:1px solid rgba(247,239,225,0.15);padding-top:20px;font-size:0.78rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 
+  /* ---------- VISIT COUNTER ---------- */
+  .visit-counter{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px 0 4px;flex-wrap:wrap;
+  }
+  .visit-counter-label{
+    font-family:'Inter',sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+    color:rgba(247,239,225,0.55);
+  }
+  .visit-counter-digits{
+    display:inline-flex;gap:2px;
+    background:#1a1310;border:1px solid rgba(200,155,60,0.35);border-radius:4px;
+    padding:6px 10px;
+  }
+  .visit-counter-digits span{
+    font-family:'Inter',monospace;font-weight:700;font-size:1rem;
+    color:var(--gold-light);
+    min-width:0.62em;text-align:center;
+    text-shadow:0 0 6px rgba(228,201,122,0.5);
+  }
+
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     *{transition:none !important;}
@@ -892,12 +913,35 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
+    <div class="visit-counter">
+      <span class="visit-counter-label">Total Visits</span>
+      <span class="visit-counter-digits" id="visitCounterDigits">
+        <span>–</span><span>–</span><span>–</span><span>–</span><span>–</span>
+      </span>
+    </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Black Hills Hindu Temple &amp; Community Center. Rapid City, SD.</span>
       <span>A place of devotion, culture, and community — open to all.</span>
     </div>
   </div>
 </footer>
+
+<script>
+  (function(){
+    var el = document.getElementById('visitCounterDigits');
+    if(!el) return;
+    fetch('https://countapi.mileshilliard.com/api/v1/hit/bhhtcc_rapidcity_site_visits')
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        var count = (data && (data.value || data.count)) || 0;
+        var digits = String(count).padStart(5, '0').split('');
+        el.innerHTML = digits.map(function(d){ return '<span>'+d+'</span>'; }).join('');
+      })
+      .catch(function(){
+        el.innerHTML = '<span>—</span>';
+      });
+  })();
+</script>
 
 </body>
 </html>
