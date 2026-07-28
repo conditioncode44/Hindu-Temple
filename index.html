@@ -360,6 +360,40 @@
   .zelle-sub{font-family:'Lora',serif;font-size:0.86rem;color:#4a3a34;}
   .zelle-email{font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:600;color:var(--maroon-deep);margin-top:2px;}
 
+  /* ---------- DONORS ---------- */
+  .donor-facility{
+    background:linear-gradient(135deg, var(--maroon) 0%, var(--maroon-deep) 100%);
+    color:var(--white);border-radius:6px;
+    padding:26px 32px;margin:0 0 44px;
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;
+    box-shadow:var(--shadow-soft);
+  }
+  .donor-facility-label{font-family:'Inter',sans-serif;font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-light);}
+  .donor-facility-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.5rem;color:var(--white);}
+  .donor-tier{margin-bottom:34px;}
+  .donor-tier:last-child{margin-bottom:0;}
+  .donor-tier-head{display:flex;align-items:baseline;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+  .donor-tier-title{
+    font-family:'Inter',sans-serif;font-size:0.76rem;letter-spacing:0.13em;text-transform:uppercase;
+    color:var(--maroon-deep);font-weight:700;
+  }
+  .donor-tier-range{font-family:'Inter',sans-serif;font-size:0.74rem;color:#7a6a5f;letter-spacing:0.02em;}
+  .donor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
+  .donor-chip{
+    background:var(--white);border:1px solid rgba(107,30,35,0.14);border-left:3px solid var(--gold);
+    border-radius:4px;padding:14px 18px;font-family:'Lora',serif;font-size:0.98rem;color:var(--maroon-deep);
+  }
+  .donor-tier.tier-grand .donor-chip{
+    border-left-color:var(--gold);background:var(--cream-deep);
+    font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.3rem;text-align:center;
+  }
+  .donor-tier.tier-patron .donor-chip{border-left-color:var(--saffron);}
+  .donor-tier.tier-supporter .donor-chip{border-left-color:var(--pine);}
+  .donor-tier.tier-mention .donor-chip{border-left-color:rgba(107,30,35,0.3);font-size:0.9rem;color:#4a3a34;}
+  .donor-note{
+    margin-top:8px;font-family:'Inter',sans-serif;font-size:0.8rem;color:#7a6a5f;text-align:center;
+  }
+
   /* ---------- CONTACT ---------- */
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
   @media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
@@ -482,6 +516,7 @@
         <li><a href="#worship">Worship</a></li>
         <li><a href="#visit">Visit</a></li>
         <li><a href="#involved">Get Involved</a></li>
+        <li><a href="#donors">Donors</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -589,11 +624,6 @@
         <li><span class="name">Bhavin Sampat</span><span class="role">Secretary / Treasurer</span></li>
         <li><span class="name">Nikita Sampat</span><span class="role">Event Coordinator</span></li>
         <li><span class="name">Deepak Goyal</span><span class="role">Strategy and PR Officer</span></li>
-        <h3>Past Board Members and Active Volunteers</h3>
-        <ul class="list">
-        <li><span class="name">Kavitha Gadhamshetty</span><span class="role">Past Board President</span></li>
-        <li><span class="name">Ram Nageena</span><span class="role">Past Board Vice President</span></li>
-        <li><span class="name">Neel, Yash, Chirag, Ramana, Nidhi, Mahesh, Pallavi</span><span class="role">Active Volunteers</span></li>
       </ul>
       <div class="note" style="margin-top:18px;">The Vice President seat is currently open. Interested community members can reach out via the <a href="#contact" style="color:var(--maroon-deep);text-decoration:underline;">contact form</a> to learn about running.</div>
     </div>
@@ -1151,6 +1181,71 @@
   </div>
 </section>
 
+<section id="donors">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">With Gratitude</div>
+      <h2>Our Donors &amp; Sponsors</h2>
+    </div>
+    <p style="max-width:620px;margin:-24px auto 40px;text-align:center;color:#4a3a34;">The temple's home and programs exist because of the generosity of our community. We offer our heartfelt thanks to the following donors and sponsors.</p>
+
+    <div class="donor-facility">
+      <span class="donor-facility-label">Facility &amp; Rent Sustainer &mdash; Monthly Sponsor</span>
+      <span class="donor-facility-name">Chirag Jani</span>
+    </div>
+
+    <div class="donor-tier tier-grand">
+      <div class="donor-tier-head">
+        <span class="donor-tier-title">Grand Benefactors</span>
+        <span class="donor-tier-range">$5,000+</span>
+      </div>
+      <div class="donor-grid">
+        <div class="donor-chip">Rakesh Ponnapureddy</div>
+      </div>
+    </div>
+
+    <div class="donor-tier tier-patron">
+      <div class="donor-tier-head">
+        <span class="donor-tier-title">Patrons</span>
+        <span class="donor-tier-range">$1,000 &ndash; $4,999</span>
+      </div>
+      <div class="donor-grid">
+        <div class="donor-chip">Barbara Aman</div>
+        <div class="donor-chip">Bhaskar Purushottam</div>
+      </div>
+    </div>
+
+    <div class="donor-tier tier-supporter">
+      <div class="donor-tier-head">
+        <span class="donor-tier-title">Supporters</span>
+        <span class="donor-tier-range">$100 &ndash; $999</span>
+      </div>
+      <div class="donor-grid">
+        <div class="donor-chip">Krishna Devi</div>
+        <div class="donor-chip">Manoj Tripathi</div>
+        <div class="donor-chip">Peda Vasanta Reddy Medagam</div>
+        <div class="donor-chip">Satya Jasthi</div>
+        <div class="donor-chip">Senthilkumar Veluswamy</div>
+      </div>
+    </div>
+
+    <div class="donor-tier tier-mention">
+      <div class="donor-tier-head">
+        <span class="donor-tier-title">Notable Mentions</span>
+        <span class="donor-tier-range">Under $100</span>
+      </div>
+      <div class="donor-grid">
+        <div class="donor-chip">Amlan Kar</div>
+        <div class="donor-chip">Rudrajit Mitra</div>
+        <div class="donor-chip">Sathwik Tirukandyur</div>
+        <div class="donor-chip">Shrikanth Janga</div>
+      </div>
+    </div>
+
+    <p class="donor-note">This list reflects contributions received to date. If we've missed your name or a detail needs correcting, please <a href="#contact" style="color:var(--maroon-deep);font-weight:600;">let us know</a>.</p>
+  </div>
+</section>
+
 <section id="contact">
   <div class="wrap contact-grid">
     <div>
@@ -1443,6 +1538,7 @@
         <li><a href="#prayers">Prayers</a></li>
         <li><a href="#visit">Visit</a></li>
         <li><a href="#involved">Get Involved</a></li>
+        <li><a href="#donors">Donors</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
