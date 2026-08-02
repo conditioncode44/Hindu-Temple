@@ -565,7 +565,55 @@
         <circle cx="16" cy="17" r="2" fill="#6B1E23"/>
       </svg>
       <span class="line"></span>
+      
     </div>
+
+    <div class="candle">
+  <div class="flame"></div>
+  <div class="candle-body"></div>
+</div>
+
+<style>
+.candle {
+  position: relative;
+  width: 20px;
+  height: 100px;
+  display: inline-block;
+}
+
+.candle-body {
+  width: 20px;
+  height: 80px;
+  background: linear-gradient(to bottom, #f5e6c8, #e8d4a0);
+  border-radius: 3px;
+  position: absolute;
+  bottom: 0;
+}
+
+.flame {
+  width: 14px;
+  height: 28px;
+  background: radial-gradient(circle at 50% 70%, #fff9c4 0%, #ffb300 40%, #ff6f00 80%, transparent 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: absolute;
+  top: -22px;
+  left: 3px;
+  filter: blur(0.3px);
+  transform-origin: bottom center;
+  animation: flicker 2.2s infinite ease-in-out;
+  box-shadow: 0 0 12px 4px rgba(255, 170, 0, 0.5);
+}
+
+@keyframes flicker {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  10% { transform: scale(0.95, 1.05) rotate(-1deg); opacity: 0.9; }
+  20% { transform: scale(1.05, 0.95) rotate(1deg); opacity: 1; }
+  35% { transform: scale(0.9, 1.1) rotate(-2deg); opacity: 0.85; }
+  50% { transform: scale(1.1, 0.9) rotate(2deg); opacity: 1; }
+  65% { transform: scale(0.97, 1.03) rotate(-1deg); opacity: 0.92; }
+  80% { transform: scale(1.03, 0.97) rotate(1deg); opacity: 1; }
+}
+</style>
     <div class="eyebrow hero-eyebrow">Rapid City, South Dakota</div>
     <h1>A sacred home for <em>peace, harmony &amp; community</em></h1>
     <p class="lede">Black Hills Hindu Temple &amp; Community Center is a place of worship and gathering for Rapid City's Hindu community, and a welcoming space where neighbors of every background come together in devotion, culture, and fellowship.</p>
